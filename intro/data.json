@@ -1,0 +1,72 @@
+[
+    {
+      "title": "Data Structures and Algorithms",
+      "date": "2023-08-02",
+      "author": "Emily Johnson"
+    },
+    {
+      "title": "Artificial Intelligence Trends",
+      "date": "2023-08-01",
+      "author": "William Smith"
+    },
+    {
+      "title": "Frontend Development Techniques",
+      "date": "2023-07-31",
+      "author": "Sophia Lee"
+    },
+    {
+      "title": "Database Design Principles",
+      "date": "2023-07-30",
+      "author": "Daniel Wang"
+    },
+    {
+      "title": "Networking Fundamentals",
+      "date": "2023-07-29",
+      "author": "Olivia Johnson"
+    },
+    {
+      "title": "Mobile App Development",
+      "date": "2023-07-28",
+      "author": "James Davis"
+    },
+    {
+      "title": "Cybersecurity Essentials",
+      "date": "2023-07-27",
+      "author": "Emma Smith"
+    },
+    {
+      "title": "Cloud Computing Concepts",
+      "date": "2023-07-26",
+      "author": "Noah Johnson"
+    },
+    {
+      "title": "User Experience Design",
+      "date": "2023-07-25",
+      "author": "Ava Martin"
+    },
+    {
+      "title": "Big Data Analytics",
+      "date": "2023-07-24",
+      "author": "Liam Wilson"
+    },
+    {
+      "title": "The Art of Programming",
+      "date": "2023-08-06",
+      "author": "John Smith"
+    },
+    {
+      "title": "Learning Python",
+      "date": "2023-08-05",
+      "author": "Jane Doe"
+    },
+    {
+      "title": "Web Development 101",
+      "date": "2023-08-04",
+      "author": "Alex Johnson"
+    },
+    {
+      "title": "Machine Learning Basics",
+      "date": "2023-08-03",
+      "author": "Michael Brown"
+    }
+]
