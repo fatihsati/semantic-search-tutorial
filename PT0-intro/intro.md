@@ -4,12 +4,12 @@ Bu dosya içerisinde; Anlamsal arama motorları nelerdir, nasıl çalışırlar,
 
 ##  İçindekiler
 1. [Vector DB nedir?](#1-vektör-veritabanı-nedir)
-2. [qdrant kurulumu](#2-qdrant-kurulumu)
-3. [Embedding modelleri nelerdir, nasıl kullanılır?](#3-embedding-modelleri-nelerdir-nasıl-kullanılır)
+2. [Qdrant Kurulumu](#2-qdrant-kurulumu)
+3. [Embedding Modelleri Nelerdir, Nasıl Kullanılır?](#3-embedding-modelleri-nelerdir-nasıl-kullanılır)
 4. [Demo](#4-demo)
 
 
-## 1. Vektör Veritabanı nedir?
+## 1. Vektör Veritabanı Nedir?
 
 Yazılım uygulamalarında veritabanları sıklıkla kullanılır. Geliştirilen uygulama ister bir websitesi isterse yapay zeka uygulaması olsun, gerek uygulama içerisinde kullanacağımız gerekse kullanıcıdan alacağımız her türlü bilgiyi saklamak için veritabanlarına ihtiyaç duyarız.
 
@@ -19,11 +19,9 @@ Anlamsal arama motorları metinlerin anlamlarını temsil etmek için makine ö�
 
 Vektör veritabanları verilen bir "embedding" ile içerisinde bulunan diğer embedding'leri karşılaştırarak aralarındaki mesafeyi ölçebilmektedirler. Bu mesafe bize iki dökümanın birbirlerine ne kadar benzer olduklarını göstermektedir. Mesafe ne kadar az ile dökümanların birbirlerine o kadar benzer olduğunu varsayarız. Aradaki mesafeyi ölçmek için birden fazla yöntem bulunmaktadır, bunların detayları PT1-intro kısmında incelenecektir.
 
-### ***embedding indexleme ve search için bir foto***
-
 Birçok farklı veritabanı vektör saklama ve arama özelliği sunmaktadır. Genel olarak hepsinin çalışma mantığı aynıdır fakat aralarında memory tüketimi ve hız gibi farklılıklar bulunmaktadır. Biz bu eğitim serisi boyunca *qdrant* veritabanını kullanacağız.
 
-## 2. qdrant Kurulumu
+## 2. Qdrant Kurulumu
 
 qdrant, anlamsal arama ve vektör veritabanı çözümüdür. Metinlerin anlamlarını temsil etmek için embedding yöntemlerini kullanır ve vektörler üzerinde optimize bir şekilde arama yapmayı sağlar.
 
@@ -148,6 +146,8 @@ HuggingFace sitesinde sunulan binlerce modele bu [linkten](https://huggingface.c
 
 4. Verilerin Collection İçerisine Eklenmesi
 
+    ![Dokümanların Veritabanına Eklenmesi](../assets/Offline.jpg)
+
     Verileri veritabanına eklemek için yapmamız gereken birkaç işlem bulunmaktadır. Bunlar şu şekilde sıralanabilir:
     1. **Embedding oluştur**
     2. **Dokümanı PointStruct objesi haline getir**
@@ -186,6 +186,8 @@ HuggingFace sitesinde sunulan binlerce modele bu [linkten](https://huggingface.c
     Anlamsal arama motoru için gerekli olan dokümanların veritabanına eklenmesi işlemini tamamladık. Sırada yeni gelen bir *sorgu* için en alakalı veya benzer dokümanların bulunması işlemi vardır.
 
     Veritabanında anlamsal arama yapabilemiz için arama sorgusunun da *Embedding*'ini oluşturmamız gerekmektedir. Çünkü benzerliği metinler üzerinden değil, vektörler üzerinden gerçekleştirmek istiyoruz.
+
+    ![Anlamsal Arama Motoru Sorgu Hayat Döngüsü](../assets/Online.jpg)
 
     **qdrant** ile bunu yapması oldukça kolaydır, yapmamız gereken tek şey bir *collection* belirtip, arama yapılacak *embedding*'i vermemizdir.
 
