@@ -56,6 +56,80 @@ Cross Encoders modelleri genellikle daha başarılı sonuçlar vermektedirler fa
 
 ## ***TODO:*** CE FLOW ORNEGI BIR FOTO.
 
+## 3. Anlamsal Benzerlik
+Şimdiye kadar dokümanları nasıl temsil edeceğimizden bahsettik, şimdi ise dokümanların temsillerini kullanarak aralarındaki benzerliği nasıl hesaplayacağımızdan bahsedeceğiz. Benzerlik dediğimiz şey matematiksel olarak vektörler arasındaki mesafeyi hesaplamak demektir. Vektörler arasındaki mesafe ne kadar küçükse dokümanlar arasındaki benzerlik o kadar yüksek kabul edilir.
+Benzerlik hesaplamak için kullanılan birçok yöntem bulunmaktadır, bunlardan bazıları:
 
+* Cosine Similarity
+* Euclidean Distance
+* Manhattan Distance
+> Burada anlatılan bütün formüllerin kodlarına [buradan](./distances.py) erişebilirsiniz.
+
+## ***TODO:*** Vektör Uzayı foto
+
+Bu düşüncenin altında yatan en büyük düşünce ise şudur: embedding hesaplaması sırasında kelimelerin anlamları temsil edildiği için, birbirine benzer anlamda olan metinlerin vektörleri de birbirine benzer olacaktır yani birbirine çok yakın olacaktır.
+
+
+### Cosine Similarity
+Cosine Similarity, iki vektör arasındaki açıyı hesaplayarak benzerlik hesaplar. Cosine Similarity değeri -1 ile 1 arasında değişir, -1 tamamen zıt iken 1 tamamen benzer anlamına gelir. Cosine Similarity hesaplamak için aşağıdaki formül kullanılır:
+
+## TODO: COSINE SIMILARITY FORMULU
+Benzerlik hesaplamaları için en sık kullanılan formul olan Kosinüs benzerliğini Python ile hesaplaması oldukça kolaydır:
+```Python
+import numpy as np
+embed1 = np.array([1, 2, 3]) # Vektor1
+embed2 = np.array([4, 5, 6]) # Vektor2
+dot_product = np.dot(embed1, embed2)
+norm_embed1 = np.linalg.norm(embed1)
+norm_embed2 = np.linalg.norm(embed2)
+cosine = dot_product / (norm_embed1 * norm_embed2)
+```
+
+Hiçbir harici kütüphane kullanmadan aşağıdaki kod ile de Kosinüs benzerliği hesabı yapabilirsiniz:
+```Python
+def dot_scratch(embed1, embed2):
+    """dot product of two vectors is the sum of element wise multiplication of vectors.
+    """
+    dot = sum(i*j for i,j in zip(embed1, embed2))
+    return dot
+
+def norm_scratch(embed):
+    """norm of magnitude. Square root of the sum of the square of each item.
+    1. take square of each item in vector.
+    2. take sum of the results..
+    3. take square root of the sum."""
+    return sum(i**2 for i in embed) ** 0.5
+
+def calculate_cosine_scratch(embed1, embed2):
+    """cosine similarity is calculating by:
+    1. calculate dot product between embeddings
+    2. calculate norm of each embed
+    3. divine dot product to multiplication of norms.
+    dot(embed1, embed2) / (norm(embed1) * norm(embed2))
+    """
+    cosine = dot_scratch(embed1, embed2) / (norm_scratch(embed1) * norm_scratch(embed2))
+    return cosine
+```
+
+Temel olarak *dot_product* dediğimiz şey iki vektörün elemanlarının çarpımının toplamıdır. *norm* dediğimiz şey ise her bir elemanın karesinin toplamının kareköküdür. Bu iki değeri kullanarak Cosine Similarity hesaplanır. Temelde formül şu şekilde ifade edilebilir:
+
+> dot(embed1, embed2) / (norm(embed1) * norm(embed2))
+
+
+### Euclidean Distance
+Euclidean distance aslında hepimizin liseden bildiği Pisagor teoremidir. İki vektör arasında kalan doğru parçasına verilen isimdir. Numpy vektörler üzerinde toplama/çıkartma gibi işlemleri kolaylıkla yaptığı için bu hesaplamayı numpy ile yapmak oldukça kolaydır.
+
+```Python
+distance = np.linalg.norm(embed1 - embed2)
+```
+
+Cosine kadar yaygın olmasa da sık kullanılan yöntemlerden birisidir, çoğu vektör veritabanı Euclidean Distance'ı desteklemektedir. Formül temelde vektörlerin elemanlarının farkının karelerinin toplanması ve ardından karekökünün alınması ile hesaplanmaktadır. Numpy kullanmadan şu şekilde hesaplaması yapılabilir:
+
+```Python
+distance = sum([(i-j)**2 for i,j in zip(embed1, embed2)]) ** 0.5
+```
+
+
+### Manhattan Distance
 
 
