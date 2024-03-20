@@ -3,7 +3,7 @@
 Bir önceki bölümde vektör veri tabanlarından, vektörlerin nasıl oluşturulduğundan ve vektör veri tabanı kullanılarak örnek bir anlamsal arama yapmıştık. Bu bölümde ise anlamsal arama motorlarının temelini oluşturan embedding modelleri ve benzerlik hesaplama yöntemlerinden bahsedeceğiz.
 
 ## İçindekiler
-1. [Embedding nedir??](#1-embedding-nedir)
+1. [Embedding nedir?](#1-embedding-nedir)
 2. [Embedding Model Çeşitleri](#2-embedding-model-çeşitleri)
     * [SentenceTransformers](#sentenceTransformers)
     * [Cross Encoders](#cross-encoders)
