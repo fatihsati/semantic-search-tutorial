@@ -7,6 +7,6 @@ RAG sistemlerinin gelişmesi ile beraber Anlamsal Arama sistemleri oldukça pop�
 Bu repo içerisinde bulunan kodları dilediğiniz gibi kullanabilir ve herhangi bir sorunuz olduğu takdirde benimle iletişime geçebilirsiniz.
 
 ## İçindekiler
-1. [Anlamsal Arama Motorlarına Giriş](./PT1-intro/README.md)
+1. [Anlamsal Arama Motorlarına Giriş](./PT1-intro/)
 2. [Embedding ve Benzerlık](./PT2-basics/)
 
