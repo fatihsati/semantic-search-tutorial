@@ -35,7 +35,8 @@ Tabi ki **CountVectorizer** bir metini temsil etmek için kullanılabilecek en b
 * Cross Encoders
 
 
-Biz bu tutorial boyunca ağırlıklı olarak SentenceTransformers ve Cross Encoders üzerinde duracağız. Çünkü bu modellerin temelinde BERT modeli yatmaktadır ve bu modellerin performansı diğer modellere göre oldukça yüksektir. Bu modeller cümlelerin anlamını temsil etmek için özel olarak eğitilmektedirler. Bu modeller eğitimleri sırasında cümlelerin benzerliklerini ve farklılıklarını öğrenirler ve bu sayede cümleleri anlamlarına göre temsil edebilirler.
+Biz bu tutorial boyunca ağırlıklı olarak SentenceTransformers ve Cross Encoders üzerinde duracağız. Çünkü buu modellerin temelinde BERT modeli yatmaktadır ve bu sayede performansları diğer yöntemlere göre çok daha yüksektir. State-of-the-art yani şu anda en iyi performansı gösteren yöntemler olarak kabul edilebilirler.  Bu modeller eğitim sırasında cümlelerin benzerliklerini ve farklılıklarını öğrendikleri için, cümlelerin anlamını temsil etme konusunda oldukça başarılıdırlar.
+
 
 ### SentenceTransformers
 SentenceTransformers modelleri cümleleri, kelimeleri veya dokümanları temsil etmek için kullanılabilir. Bu modeller temelde iki farklı katmandan oluşmaktadırlar:
