@@ -146,7 +146,7 @@ HuggingFace sitesinde sunulan binlerce modele bu [linkten](https://huggingface.c
 
 4. Verilerin Collection İçerisine Eklenmesi
 
-    ![Dokümanların Veritabanına Eklenmesi](../assets/Offline.jpg)
+    ![Dokümanların Veritabanına Eklenmesi](./assets/Offline.jpg)
 
     Verileri veritabanına eklemek için yapmamız gereken birkaç işlem bulunmaktadır. Bunlar şu şekilde sıralanabilir:
     1. **Embedding oluştur**
@@ -187,7 +187,7 @@ HuggingFace sitesinde sunulan binlerce modele bu [linkten](https://huggingface.c
 
     Veritabanında anlamsal arama yapabilemiz için arama sorgusunun da *Embedding*'ini oluşturmamız gerekmektedir. Çünkü benzerliği metinler üzerinden değil, vektörler üzerinden gerçekleştirmek istiyoruz.
 
-    ![Anlamsal Arama Motoru Sorgu Hayat Döngüsü](../assets/Online.jpg)
+    ![Anlamsal Arama Motoru Sorgu Hayat Döngüsü](./assets/Online.jpg)
 
     **qdrant** ile bunu yapması oldukça kolaydır, yapmamız gereken tek şey bir *collection* belirtip, arama yapılacak *embedding*'i vermemizdir.
 
